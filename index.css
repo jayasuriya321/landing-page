@@ -281,7 +281,7 @@ p {
     padding: 50px 30px;
     background-color: #fff;
     border-radius: 10px;
-    box-shadow: 0 20px 40px rgb(0 0 0 / 12%);
+    box-shadow: 0 20px 40px rgb(0 0 0 / 6%);
 }
 
 .booking-form {
@@ -373,8 +373,18 @@ p {
 /** Things to do**/
 
 .things-to-do {
-  padding: 80px 20px;
+  padding: 80px 0px;
   text-align: center;
+  background-color: #F7F8FC;
+}
+
+.section-title {
+  display: flex;
+}
+
+.airplane {
+  position: relative;
+  left: 80px;
 }
 
 .section-title h2 {
@@ -404,20 +414,27 @@ p {
   gap: 30px;
 }
 
+/* .step-box:hover,
+.step-box.active {
+  transform: translateY(-5px);
+} */
+
+.step-box.active {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+}
+
 .step-box {
   background: #fff;
   padding: 40px 25px;
   border-radius: 12px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
   position: relative;
   overflow: hidden;
-  transition: transform 0.3s ease;
   text-align: left;
 }
 
-.step-box:hover {
+/* .step-box:hover {
   transform: translateY(-5px);
-}
+} */
 
 .icon {
   font-size: 36px;
@@ -477,6 +494,11 @@ p {
 }
 
 @media (max-width: 768px) {
+
+  .airplane {
+   display: none;
+  }
+
   .section-title h2 {
     font-size: 28px;
     line-height: 36px;
@@ -553,10 +575,14 @@ p {
 .deal-card {
   background: #fff;
   border-radius: 12px;
+  border: 2px solid #fe935e26;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgb(0 0 0 / 10%);
   position: relative;
   transition: transform 0.3s ease;
+}
+
+.deal-card.active {
+  box-shadow: 0 20px 110px #fe935e40;
 }
 
 .deal-card:hover {
@@ -570,6 +596,16 @@ p {
   border-bottom: 1px solid #eee;
 }
 
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 290px; /* same as image height */
+  background: rgba(0, 0, 0, 0.4); /* dark transparent overlay */
+  z-index: 1;
+}
+
 .book-now {
   position: absolute;
   top: 50%;
@@ -578,9 +614,11 @@ p {
   background: #fd6e1e;
   color: #fff;
   border: none;
-  padding: 10px 20px;
+  padding: 12px 22px;
   border-radius: 6px;
-  font-weight: 600;
+  font-family: var(--font-primary);
+  font-size: 18px;
+  font-weight: var(--font-weight-medium);
   cursor: pointer;
   z-index: 2;
 }
@@ -826,10 +864,14 @@ p {
 
 .card {
     background-color: #fff;
+    border:2px solid #66666617;
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 20px 40px rgb(0 0 0 / 11%);
     transition: transform 0.3s ease;
+}
+
+.card.active {
+  box-shadow: 0 20px 110px #fe935e40;
 }
 
 .card:hover {
@@ -985,6 +1027,10 @@ p {
 
 /** Testimonail Section **/
 
+.testimonial-bg {
+  background-color: #F7F8FC;
+}
+
 #testimonial-contain {
     padding: 200px 0px 200px 0px;
 }
@@ -1055,7 +1101,7 @@ p {
     background-color: #fff;
     padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 38px 25px rgba(0, 0, 0, 0.231);
+    box-shadow: 0 51px 100px rgb(0 0 0 / 9%);
     width: 505px;
     height: 245px;
     position: absolute;
@@ -1067,12 +1113,12 @@ p {
 .testimonial-card.secondary {
     background-color: #fff;
     opacity: 0.5;
-    transform: translate(80px, 110px);
+    transform: translate(40px, 110px);
     z-index: 1;
-    width: 550px;
+    width: 490px;
     height: 230px;
-    box-shadow: 0 10px 40px #222222;
-    border: 3px solid rgba(0, 0, 0, 0.249);
+    box-shadow: 0 51px 100px rgb(0 0 0 / 9%);
+    border: 2px solid rgba(0, 0, 0, 0.249);
     display: flex;
     justify-content: flex-start;
     align-items: end;
@@ -1306,8 +1352,8 @@ p {
 }
 
 .blog-dots span.active {
-    width: 16px;
-    height: 16px;
+    width: 14px;
+    height: 14px;
     background-color: #FA7436;
 }
 
@@ -1626,7 +1672,7 @@ p {
 .footer-highlight {
     font-family: var(--font-primary);
     color: #666666;
-    padding: 45px 0px;
+    padding: 40px 0px;
 }
 
 .footer-copyright h4 {
