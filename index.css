@@ -105,8 +105,6 @@ p {
 
 @media (max-width: 768px) {
   #trabook-header {
-    flex-direction: column;
-    align-items: flex-start;
     padding: 20px 0;
     gap: 20px;
   }
@@ -117,6 +115,10 @@ p {
     align-items: center;
   }
 
+  .header-menu {
+    display: none;
+  }
+
   .header-menu ul {
     flex-direction: column;
     align-items: flex-start;
@@ -124,13 +126,11 @@ p {
   }
 
   .user-login {
-    flex-direction: column;
-    align-items: flex-start;
     gap: 10px;
   }
 
   .signup-btn a button {
-    padding: 10px 30px;
+    padding: 10px 12px;
   }
 }
 
@@ -352,6 +352,10 @@ p {
     gap: 1.5rem;
   }
 
+  #booking-contain {
+    padding: 50px 0px 50px 0px;
+  }
+
   .booking-form {
     gap: 1rem;
   }
@@ -376,15 +380,17 @@ p {
   padding: 80px 0px;
   text-align: center;
   background-color: #F7F8FC;
-}
-
-.section-title {
-  display: flex;
+  position: relative;
 }
 
 .airplane {
-  position: relative;
-  left: 80px;
+  position: absolute;
+  top: 100px;
+  right: 80px;
+}
+
+.airplane img {
+  width: 150px;
 }
 
 .section-title h2 {
@@ -532,6 +538,10 @@ p {
   .icon {
     margin-bottom: 20px;
   }
+
+  .things-to-do {
+    padding: 50px 0px;
+  }
 }
 
 
@@ -591,8 +601,9 @@ p {
 
 .deal-card img {
   width: 100%;
-  height: 290px;
+  display: block;
   object-fit: cover;
+  height: auto;
   border-bottom: 1px solid #eee;
 }
 
@@ -601,16 +612,15 @@ p {
   top: 0;
   left: 0;
   width: 100%;
-  height: 290px; /* same as image height */
-  background: rgba(0, 0, 0, 0.4); /* dark transparent overlay */
+  height: 290px; /* Instead of fixed 290px */
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   z-index: 1;
 }
 
 .book-now {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   background: #fd6e1e;
   color: #fff;
   border: none;
@@ -621,6 +631,7 @@ p {
   font-weight: var(--font-weight-medium);
   cursor: pointer;
   z-index: 2;
+  transition: background 0.3s ease;
 }
 
 .deal-info {
@@ -710,6 +721,10 @@ p {
     line-height: 44px;
   }
 
+  .image-overlay {
+    height: 250px;
+  }
+
   .deals-header p {
     font-size: 16px;
     line-height: 28px;
@@ -736,6 +751,15 @@ p {
   .deals-header h2 {
     font-size: 28px;
     line-height: 36px;
+  }
+
+  .deals-section {
+    padding: 50px 0px;
+  }
+
+  .deal-card img,
+  .image-overlay {
+    height: 220px; /* Make sure both match */
   }
 
   .deals-header p {
@@ -793,7 +817,7 @@ p {
 /** Vacation Section **/
 
 .vacation-section {
-    padding: 200px 0px 200px 0px;
+    padding: 150px 0px 150px 0px;
 }
 
 .vacation-header {
@@ -835,7 +859,7 @@ p {
 .nav-buttons {
     display: flex;
     justify-content:end;
-    gap: 10px;
+    gap: 2rem;
 }
 
 .nav-btn {
@@ -920,9 +944,13 @@ p {
     color: #666;
 }
 
-.card-footer i {
+#arrow {
     color: #fd6e1e;
     margin-right: 5px;
+}
+
+#star {
+    color: #FDCC0D; 
 }
 
 @media (max-width: 1024px) {
@@ -1032,7 +1060,14 @@ p {
 }
 
 #testimonial-contain {
-    padding: 200px 0px 200px 0px;
+    padding: 150px 0px 150px 0px;
+    position: relative;
+}
+
+.plane-circle {
+  position: absolute;
+  top: 80px;
+  right: -150px;
 }
 
 .testimonial-section {
@@ -1172,6 +1207,10 @@ p {
     padding: 120px 0;
   }
 
+  .plane-circle {
+    display: none;
+  }
+
   .testimonial-section {
     flex-direction: column;
     gap: 3rem;
@@ -1182,6 +1221,10 @@ p {
   .testimonial-text {
     text-align: center;
     flex: 1 1 100%;
+  }
+
+  .testimonial-box {
+    width: 100%;
   }
 
   .testimonial-text h2 {
@@ -1196,6 +1239,10 @@ p {
     max-width: 500px;
   }
 
+  .testimonial-content p {
+    margin-top: 20px;
+  }
+
   .testimonial-nav {
     justify-content: center;
     margin-top: 25px;
@@ -1206,14 +1253,10 @@ p {
     flex: 1 1 100%;
     margin-top: 0;
   }
-
-  .testimonial-card,
+  
   .testimonial-card.secondary {
     position: static;
-    transform: none;
-    width: 90%;
     margin: 0 auto;
-    height: auto;
   }
 
   .user-img {
@@ -1224,7 +1267,11 @@ p {
 
 @media (max-width: 768px) {
   #testimonial-contain {
-    padding: 80px 0;
+    padding: 50px 0;
+  }
+
+  .testimonial-card{
+    position: static !important;
   }
 
   .testimonial-text h2 {
@@ -1242,10 +1289,13 @@ p {
 
   .testimonial-card,
   .testimonial-card.secondary {
-    padding: 20px;
-    width: 100%;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     border: none;
+    height: auto;
+    width: 100%;
+  }
+
+  .testimonial-card.secondary {
+    display: none;
   }
 
   .user-img {
@@ -1399,7 +1449,6 @@ p {
   .blog-cards {
     grid-template-columns: 1fr;
     gap: 20px;
-    padding: 0 20px;
   }
 
   .blog-card img {
@@ -1602,6 +1651,12 @@ p {
     font-family: var(--font-primary);
     padding: 100px 0px 40px 0px;
 }
+
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
 
 .footer-menu {
     display: flex;
